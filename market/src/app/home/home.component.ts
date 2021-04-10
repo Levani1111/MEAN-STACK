@@ -29,8 +29,13 @@ export class HomeComponent {
   ngOnInit() {
     this.isHandsetObserver.subscribe(currentObserverValue => {
       this.isHandset = currentObserverValue;
+      this.loadCards();
 
     })
 
+  }
+
+  loadCards() {
+    this.cards = this.isHandset ? this.cardsForHandse : this.cardsForWeb;
   }
 }

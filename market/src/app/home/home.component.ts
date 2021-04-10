@@ -32,8 +32,18 @@ export class HomeComponent {
     this.isHandsetObserver.subscribe(currentObserverValue => {
       this.isHandset = currentObserverValue;
       this.loadCards();
+    });
 
-    })
+    this.appService.getDeals().subscribe(
+     response => {
+       this.cardsForHandse = response.handsetCards;
+       this.cardsForWeb = response.webCards;
+       this.loadCards();
+     },
+     error => {
+
+     }
+    );
 
   }
 

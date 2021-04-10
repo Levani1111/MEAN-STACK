@@ -13,7 +13,7 @@ export class HomeComponent {
   cards = []; 
   cardsForHandse = [];
   cardsForWeb = [];
-
+  isHandset:boolean = false;
   isHandsetObserver:Observable<boolean> = this.breakpointObserver.observe(Breakpoints.Handset).pipe(
     map(({ matches }) => {
       if (matches) {
@@ -25,4 +25,11 @@ export class HomeComponent {
   );
 
   constructor(private breakpointObserver: BreakpointObserver) {}
+
+  ngOnInit() {
+    this.isHandsetObserver.subscribe(currentObserverValue => {
+
+    })
+
+  }
 }

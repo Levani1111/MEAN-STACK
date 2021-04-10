@@ -28,6 +28,7 @@ export class HomeComponent {
 
   ngOnInit() {
     this.isHandsetObserver.subscribe(currentObserverValue => {
+      this.isHandset = currentObserverValue;
 
     })
 
